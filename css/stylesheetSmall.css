@@ -1,0 +1,42 @@
+.mainBox {
+	width: 100%;
+}
+
+.topBar {
+	width: 100%;
+}
+
+button {
+	width: 100%;
+	margin-bottom: 20px;
+	padding: 10px;
+	border-left: none;
+	border-right: none;
+	border-bottom: 1px solid rgba(136,141,155,0.2);
+	border-top: 1px solid rgba(136,141,155,0.2);
+}
+
+.popDesc {
+	width: 100%;	
+}
+
+.popInfo {
+	width: 100%;
+}
+
+.logo {
+	height: 2em;
+}
+
+.aboutMe {
+	width: 100%;
+	padding: 1em;
+	margin: 0 auto 0 auto;	
+}
+
+
+.skills {
+	width: 100%;	
+	padding: 1em;
+	margin: 0 auto 0 auto;
+}
