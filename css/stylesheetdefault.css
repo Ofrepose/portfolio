@@ -145,6 +145,13 @@ h2 {
 	content: url("../images/kcDragon2.png");
 }
 
+#movieTrailer {
+	width: 100%;
+}
+#movieTrailer:hover {
+	content: url("../images/movietrailer2.png");
+}
+
 button {
 	background-color: #fff;	
 	width: 33%;
