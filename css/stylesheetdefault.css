@@ -1,263 +1,252 @@
 body {
-	background: #f5f6f7;
+	background: #fff;
 }
 
 * {
-	box-sizing: border-box;
+	box-sizing: border-box;	
 }
+
+img {
+	align-self: baseline;
+}
+
 
 .container {
 	display: flex;
 	flex-wrap: wrap;
+	margin: 5vh 0 0 0;
+	padding: 0;	
 }
+
+.contact {
+	text-align:right;
+	padding: 2px 3px 3px 3px;
+	font-family: 'Lato';
+	border: 1px solid black;
+	border-radius: 10px;
+	margin-bottom: 20vh;
+	margin-left: 80%;
+}
+
+.contact:hover {
+	background-color: black;
+	color: #fff;
+	cursor: pointer;
+}
+
+.name {
+	font-family: 'Lato';
+	font-weight: 800;
+	font-size: 6vw;
+	width:100%;
+}
+
+.bottomName {
+	font-family: 'Lato';
+	font-weight: lighter;
+	font-size: 4vw;
+	width: 100%;	
+}
+
+.aboutMe {
+	width: 40%;
+	margin: auto;
+	font-family: 'Lato';
+	font-weight: lighter;
+	margin-top:10%;
+}
+
+.aboutMe2 {
+	width:40%;
+	margin: auto;
+	font-family: 'Lato';
+	font-weight: lighter;
+	margin-top: 10%;
+}
+
+.recentProjects {
+	margin: 10vh 0 60vh 0;
+	width: 100;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.recentProjectsText {
+	font-family: 'Lato';
+	font-weight: lighter;
+	font-size: 3vw;
+	text-align: center;
+	width: 100%;
+	margin-bottom: 1vh;
+	
+}
+
+.projectDesc {
+	width:45%;	
+	margin: auto;
+}
+
+#rebellionReboot {
+	width: 33%;
+	box-shadow: 0 1px 5px 0 black;
+	border-radius: 10px;
+	padding: .5pc;
+	margin: auto;
+}
+
+#rebellionDesc {
+	font-family: 'Lato';
+	font-weight: lighter;
+	margin: 7% 10% 10% auto;
+	text-align: left;
+}
+
+#calendar {
+	width: 33%;
+	box-shadow: 0 1px 5px 0 black;
+	border-radius: 10px;
+	padding: .5pc;
+	margin: auto;
+}
+
+#calendarDesc {
+	font-family: 'Lato';
+	font-weight: lighter;
+	margin: 7% 10% 10% auto;
+	text-align: left;
+}
+
+#KC {
+	width: 33%;
+	border-right: 1px solid black;
+	/*border-left: 1px solid black;*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.fadeIn2s {
+	-webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+         -o-animation: fadein 2s; /* Opera < 12.1 */
+            animation: fadein 2s;
+}
+
+.fadeIn4s {
+	-webkit-animation: fadein 4s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 4s; /* Firefox < 16 */
+        -ms-animation: fadein 4s; /* Internet Explorer */
+         -o-animation: fadein 4s; /* Opera < 12.1 */
+            animation: fadein 4s;
+}
+
 
 .container2 {
 	display: flex;
 	flex-wrap: wrap;
 }
 
-.box {
-	width: 100%;
-}
-
-.topBar {
-	padding: 0 1% 0 1%;	
-	background-color: #fff;	
-	width: 90%;
-	height: 10%;
-	margin: 0 auto 0 auto;
-	box-shadow: 0 1px 5px 0 rgba(136,141,155,0.2);
-}
-
-.logo {
-	height: 3.5em;
-	width: auto;
-	margin: auto auto auto 0;
-}
-
-.name {
-	font-family: "lato"/*"IBM Plex Sans"*/, serif;
-	font-size: 3vw;
-	font-weight: lighter;
-	padding: .5% 0 .5% 0;
-	color: black;
-}
-
-.quote {
-	font-family: "IBM Plex Sans", serif;
-	font-size: 2vw;
-	font-weight: bold;
-	color: black;	
-	text-align: right;
-	padding: .5% 0 .5% 0;	
-}
-
-a {
-	text-decoration: none;	
-	color: black;
-	font-weight: bold;
-}
-
-.mainBox {
-	background-color: #fff;
-	width: 90%;
-	height: 80%;
-	margin: 2% auto 0 auto;	
-	padding: 1%;	
-	box-shadow: 0 2px 10px 0 rgba(136,141,155,0.2);	
-	display: flex;
-	flex-wrap: wrap;
-}
-
-.topQuote {
-	padding: 10px 20% 0 20%;
-	margin: 0 auto 10px auto;	
-	text-align: center;
-	width: 100%;
-	height: auto;	
-	font-family: "IBM Plex Sans", serif;
-	font-weight: normal;
-	font-size: 3vw;
-}
-
-#quoteCite {
-	padding: 10px 10% 0 10%;
-	margin: 0 auto 10px auto;
-	text-align: center;
-	width: 100%;
-	height: auto;
-	font-family: "IBM Plex Sans", serif;
-	font-weight: lighter;
-	font-size: 1.5vw;
-}
-
 hr {
     border: 0;
     height: 1px;
-    width: 100%;
+    width: 30%;
+    /*display: block;*/
+    margin: 0;
+    margin-right:70%;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
 
-.highlightContentBox {
-	padding: 1% 0 1% 0;
-	margin: auto;
-	width: 100%;	
-}
+hr.second {
+    border: 0;
+    height: 1px;
+    margin-top:20vh;
+    width: 100%;
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+	margin: 20vh auto 0 auto;
 
-.contentBox {
-}
 
-.contentBox:hover {
-	cursor: pointer;
-}
-
-p {
-	font-family: "Cormorant Garamond", serif;
-	font-size: 16px;
-	font-weight: 700;
-	line-height: 1.2em;
-}
-
-h2 {
-	font-family: "IBM Plex Sans", serif;
-	font-size: 18px;
-	font-weight: bold;
-}
-
-#rebellionReboot {
-	width: 100%;
-}
-#rebellionReboot:hover {
-	content: url("../images/rebellionReboot2.png");
-}
-
-#ourSchedule {
-	width: 100%;
-}
-#ourSchedule:hover {
-	content: url("../images/ourSchedule2.png");	
-}
-
-#kcDragon {
-	width: 100%;
-}
-#kcDragon:hover {
-	content: url("../images/kcDragon2.png");
-}
-
-#movieTrailer {
-	width: 100%;
-}
-#movieTrailer:hover {
-	content: url("../images/movietrailer2.png");
-}
-
-button {
-	background-color: #fff;	
-	width: 33%;
-	padding: 10px;
-	border: 0px solid white;
-	border-radius: 10px;
-	border-left: 1px solid rgba(136,141,155,0.2);
-	border-right: 1px solid rgba(136,141,155,0.2);
-}
-
-button:hover {
-	box-shadow: 0 2px 10px 0 rgba(136,141,155,0.2);
-}
-
-.aboutMe {
-	padding: 3em 5em 0 5em;
-	margin: 0 auto 0 auto;
-	width: 50%;	
-	font-family: "IBM Plex Sans", serif;
-	font-weight: normal;
-	font-size: 18px;
-}
-
-.skills {
-	padding: 3em 5em 3em 5em;
-	margin: 0 auto 0 auto;
-	width: 50%;	
-	font-family: "IBM Plex Sans", serif;
-	font-weight: normal;
-	font-size: 18px;
 }
 
 
 
 
 
-/*this feature was created with the help of www.w3schools.com | It was edited to fit my needs*/
-/*Page specific Cite: https://www.w3schools.com/howto/howto_css_modals.asp*/
 
 
-/* The Modal (background) */
-.modal {   
-    position: fixed; 
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;  
-    height: 100%;    
-    background-color: rgb(0,0,0); 
-    background-color: rgba(0,0,0,0.4); 
-    display: none;
-    overflow: auto;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
 
-/* Modal Content/Box */
-.modal-content {
-    background-color: #fefefe;
-    margin: 10% auto; 
-    padding: 10px;
-    height: 50%;    
-    width: 80%; 
-    box-shadow: 0 2px 10px 0 rgba(136,141,155,0.2);
-    display: flex;
-    flex-wrap: wrap;
-    overflow: auto;    
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
 
-.popName {	
-	padding-top: 10px;
-	margin-bottom: 0px;
-	text-align: center;
-	width: 100%;
-	height: auto;
-	margin: 0 auto 0 auto;	
-	font-family: "IBM Plex Sans", serif;
-	font-weight: bold;
-	font-size: 3vw;
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
 
-.popDesc {
-	width:35%;
-	margin: 0 auto 0 auto;
-	font-family: "IBM Plex Sans", serif;
-	font-weight: bold;
-} 
-
-.popInfo {
-	width: 30%;
-	text-align: left;
-	margin: 0 auto 0 auto;
-	font-family: "IBM Plex Sans", serif;
-	font-weight: normal;
-	overflow: auto;
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
 
-/* The Close Button */
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
