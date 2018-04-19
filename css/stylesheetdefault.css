@@ -36,7 +36,7 @@ body {
 }
 
 .name {
-	font-family: "IBM Plex Sans", serif;
+	font-family: "lato"/*"IBM Plex Sans"*/, serif;
 	font-size: 3vw;
 	font-weight: lighter;
 	padding: .5% 0 .5% 0;
@@ -203,6 +203,7 @@ button:hover {
     background-color: rgb(0,0,0); 
     background-color: rgba(0,0,0,0.4); 
     display: none;
+    overflow: auto;
 }
 
 /* Modal Content/Box */
@@ -210,12 +211,12 @@ button:hover {
     background-color: #fefefe;
     margin: 10% auto; 
     padding: 10px;
-    height: 60%;    
+    height: 50%;    
     width: 80%; 
     box-shadow: 0 2px 10px 0 rgba(136,141,155,0.2);
     display: flex;
     flex-wrap: wrap;
-    
+    overflow: auto;    
 }
 
 .popName {	
@@ -242,7 +243,8 @@ button:hover {
 	text-align: left;
 	margin: 0 auto 0 auto;
 	font-family: "IBM Plex Sans", serif;
-	font-weight: normal;	
+	font-weight: normal;
+	overflow: auto;
 }
 
 /* The Close Button */

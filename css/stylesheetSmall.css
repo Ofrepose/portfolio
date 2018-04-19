@@ -16,12 +16,21 @@ button {
 	border-top: 1px solid rgba(136,141,155,0.2);
 }
 
+.name {
+	font-size: 4vw;
+}
+
+.quote {
+	font-size: 3vw;
+}
+
 .popDesc {
 	width: 100%;	
 }
 
 .popInfo {
 	width: 100%;
+	font-size: 10px;
 }
 
 .logo {
@@ -39,4 +48,14 @@ button {
 	width: 100%;	
 	padding: 1em;
 	margin: 0 auto 0 auto;
+}
+
+.topQuote {
+	font-size: 5vw;	
+	padding: 10px 2px 0 2px;
+	margin: auto auto auto auto;
+}
+
+#quoteCite {
+	display: none;
 }
