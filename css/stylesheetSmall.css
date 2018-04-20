@@ -1,42 +1,111 @@
-.mainBox {
+.contact{
+	width:100vw;
+	text-align:center;
+	padding: .1% 0 .1% 0;
+	max-height:3vh;
+	font-family: 'Lato';
+	border: 1px solid black;
+	border-radius: 10px;
+	margin-bottom: 1px;
+	margin-left: 70vw;
+	margin-right: 5vw;
+	font-size: 1em;
+	overflow: hidden;
+	vertical-align: middle;
+}
+
+.title {
+	margin-top: -13vh;
+}
+
+.name {
+	font-family: 'Lato';
+	font-weight: 800;
+	font-size: 8vw;
+	width:100%;	
+}
+
+.bottomName {
+	font-family: 'Lato';
+	font-weight: lighter;
+	font-size: 6vw;
 	width: 100%;
-}
-
-.topBar {
-	width: 100%;
-}
-
-button {
-	width: 100%;
-	margin-bottom: 20px;
-	padding: 10px;
-	border-left: none;
-	border-right: none;
-	border-bottom: 1px solid rgba(136,141,155,0.2);
-	border-top: 1px solid rgba(136,141,155,0.2);
-}
-
-.popDesc {
-	width: 100%;	
-}
-
-.popInfo {
-	width: 100%;
-}
-
-.logo {
-	height: 2em;
+	margin-top: -3%;	
 }
 
 .aboutMe {
+	width: 70%;	
+	font-family: 'Lato';
+	font-weight: lighter;
+	margin-top:10%;
+	text-align: center;
+	margin: 0 10% 0 10%;
+}
+
+.aboutMe2 {
+	width: 70%;	
+	font-family: 'Lato';
+	font-weight: lighter;
+	margin-top:10%;
+	text-align: center;
+	margin: 5% 10% 0 10%;
+}
+
+.recentProjectsText {
+	font-family: 'Lato';
+	font-weight: lighter;
+	font-size: 6vw;
+	text-align: center;
 	width: 100%;
-	padding: 1em;
-	margin: 0 auto 0 auto;	
+	margin-bottom: 3vh;
+	color: #fff;
+	
+}
+
+.projectDesc {
+	width:100%;	
+	margin: auto;
+	padding-left:10%;
+	color: #fff;
+}
+
+#rebellionReboot {
+	width: 90%;
+	box-shadow: 0 1px 5px 0 #fff;
+	border-radius: 10px;
+	/*padding: .5pc;*/
+	margin: auto;
+	background-color: black;
+}
+
+#calendar {
+	width: 90%;
+	box-shadow: 0 1px 5px 0 #fff;
+	border-radius: 10px;
+	padding: 0;
+	margin: auto;
+	background-color: #black;
 }
 
 
-.skills {
-	width: 100%;	
-	padding: 1em;
-	margin: 0 auto 0 auto;
+
+
+
+
+
+
+
+
+
+
+
+hr {
+    border: 0;
+    height: 1px;
+    width: 50%;
+    /*display: block;*/
+    margin: 0;
+    margin-right:50%;
+    /*margin-top: -12vh;*/
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }

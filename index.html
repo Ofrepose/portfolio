@@ -2,17 +2,14 @@
 
 <html lang="En">
 
+
 <head>
 
 	<meta charset="utf-8"/>
 
-	<title>
-		
-		Daniel Payne | Full Stack Developer
-
-	</title>
-
 	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,300,700" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
 
 	<link rel="stylesheet" type="text/css" href="css/stylesheetdefault.css">
 
@@ -25,152 +22,55 @@
 
 </head>
 
+
 <body>
 
-	<!-- Here is the Top Bar with Udacity Logo and Student Name, along with skillset -->
-	<header class="topBar container2">
-
-		<img class="logo" src="images/udacity.png" alt="udacity Logo">
-
-		<div class="name">Daniel Payne<br><div class="quote">FullStack Dev</div></div>
-
-	</header>
-
-	<!-- Container for main body of page setup in a Responsive flew wrap format -->
 	<div class="container">
 
-		<!--Main Box of page for top Quotation and Cite -->
-		<main class="mainBox">
+		<div class="top">
 
-			<div class="topQuote">“Truth can only be found in one place: the code”</div>
+			<div class="contact fadeIn4s">contact me</div>
 
-			<div id="quoteCite">~Robert C. Martin</div>
+			<div class = "title">
+
+				<div class="name fadeIn2s">DANIEL PAYNE</div>
+
+				<div class="bottomName fadeIn10s">FullStack Developer</div>
+
+				<hr class="fadeIn4s">
+
+			</div>
+
+		<br>
+
+		<div class="aboutMe fadeIn4s">Let me introduce myself; I am Daniel Payne. I have been programming for the last five years. In that time my interest and love for the artform has consumed much of my time. To me, programming is a way to create worlds, to find problems and to solve them.</div>
+		<div class="aboutMe2 fadeIn4s"> I have spent most of my time creating environments and games for both Android and PC platforms <!--using the <a href="https://unity3d.com/">Unity Engine</a> -->in C#. I have experience using the JavaScript, Python, Ruby, C# and Java programming languages.</div>
+
+	
+		</div>
+		
+
+		<div class="recentProjects">
+			<div class="recentProjectsText">Recent Projects</div>
+			<div class="scrollBox"></div>
+
 			
-			<hr>
-
-			<div class="aboutMe">Let me introduce myself; I am Daniel Payne. I have been programming for the last five years. In that time my interest and love for the artform has consumed much of my time. To me, programming is a way to create worlds, to find problems and to solve them.</div>
-
-			<div class="skills"> I have spent most of my time creating environments and games for both Android and PC platforms using the <a href="https://unity3d.com/">Unity Engine</a> in C#. I have experience using the JavaScript, Python, Ruby, C# and Java programming languages. <br>
-			I don't just have experience creating games and software for Android and PC, but am also adept at creating web sites, both Front and Back End!<br> {HTML | CSS | JavaScript}
+			<!-- <img id="rebellionReboot" class ="shadow6" src="images/rebellionReboot.png">
+			<div class="projectDesc"><div id="rebellionDesc">Rebellion Reboot is a Android RTS/Turn-Based RPG game created by Daniel Payne. Factions are at war and you play as a lower class merchant who is doing whatever you can do to survive! Choose your ship, your player abilities and watch as your decisions change not only your gameplay, but the overall fate of the Galaxy!</div></div>
+			<div class="projectDesc"><div id="calendarDesc">Our Schedule is a scheduling application created for shift work employees! It lists all the shifts and populates the calendar with scheduled days and nights! Filter through other shifts and focus on just yours, or take a look at them all at once! Lists all important holidays and Plant 'Scheduled days of Importance'. Created for employees of a local Fiber Optics Facility.</div></div>
+			<img id="calendar" src="images/ourschedule.png">
 
 
-			</div>
 
-			<hr>
+			
+			<img id="KC" src="images/kcDragon.png">
+			<div class="projectDesc"><div id="KCDesc">KC the Dragon is a fun little Android action game. Take control of your dragon friend as they look to collect all their lost eggs! The more eggs you find the higher your score! Watch out for the Lava!</div></div> -->
 
-			<!-- A recent project highlight section. Click on thumbnail to read more about project -->
-			<h2>Recent Projects</h2>
+		</div>
 
-			<!-- this wraps/contains the recent project section-->
-			<div class="highlightContentBox">
 
-				<!-- Trigger/Open The Modal | img src for RebellionReboot project thumbnail. Hover to change image-->
-				<button id="myBtn"><img id="rebellionReboot" class="contentBox" src="images/rebellionReboot.png" alt="Rebellion Reboot"></button>					
-
-				<!-- Trigger/Open The Modal | img src for OurSchedule project thumbnail. Hover to change image-->
-				<button id="myBtn2"><img id="ourSchedule" class="contentBox" src="images/ourSchedule.png" alt="Our Schedule"></button>
-
-				<!-- Trigger/Open The Modal | img src for KCtheDragon project thumbnail. Hover to change image-->
-				<button id="myBtn3"><img id="kcDragon" class="contentBox" src="images/kcDragon.png" alt="KC the Dragon"></button>
-
-			</div>
-
-		</main>
-	
 	</div>
-
-		<!-- The Modal | Stays hidden until user clicks on RebellionReboot image from the Recent Project Section -->
-		<div id="myModal" class="modal">
-
-		  <!-- RebellionReboot Modal content -->
-		  <div class="modal-content">
-
-		  	<div class="popName"> Rebellion Reboot</div>
-
-		  	<div class="popDesc">Rebellion Reboot is a Android RTS/Turn-Based RPG game created by Daniel Payne. Factions are at war and you play as a lower class merchant who is doing whatever you can do to survive! Choose your ship, your player abilities and watch as your decisions change not only your gameplay, but the overall fate of the Galaxy! </div>
-
-		  	<div class=popInfo>Platform: Android/PC<br>Language(s) used: C#<br>Sourcefile: https://github.com/Ofrepose/RebellionReboot</div>
-
-		  </div>
-
-		</div>
-
-
-		<!--The Modal | Stays hidden until user clicks on OurSchedule image from the Recent Project Section -->
-		<div id="myModal2" class="modal">
-
-		  <!-- OurSchedule Modal Content -->
-		  <div class="modal-content">
-
-		  	<div class="popName"> Our Schedule</div>
-
-		  	<div class="popDesc">Our Schedule is a scheduling application created for shift work employees! It lists all the shifts and populates the calendar with scheduled days and nights! Filter through other shifts and focus on just yours, or take a look at them all at once! Lists all important holidays and Plant 'Scheduled days of Importance'. Created for employees of a local Fiber Optics Facility. </div>
-
-		  	<div class=popInfo>Platform: Android/PC<br>Language(s) used: C#<br>Sourcefile: https://github.com/Ofrepose/Calendar</div>
-
-		  </div>
-
-		</div>
-
-
-		<!--The Modal | Stays hidden until user clicks on KctheDragon image from the Recent Project Section -->
-		<div id="myModal3" class="modal">
-
-		  <!-- KCtheDragon Modal content -->
-		  <div class="modal-content">		
-
-		  	<div class="popName"> KC the Dragon</div>
-
-		  	<div class="popDesc">KC the Dragon is a fun little Android action game. Take control of your dragon friend as they look to collect all their lost eggs! The more eggs you find the higher your score! Watch out for the Lava! </div>
-
-		  	<div class=popInfo>Platform: Android/PC<br>Language(s) used: C#<br>Sourcefile: https://github.com/Ofrepose/KC-the-Dragon</div>
-
-		  </div>
-
-		</div>
 	
-
-	<script>// Get the modals
-var modal = document.getElementById('myModal');
-var modal2 = document.getElementById('myModal2');
-var modal3 = document.getElementById('myModal3');
-
-
-// Get the button that opens the modals
-var btn = document.getElementById("myBtn");
-var btn2 = document.getElementById("myBtn2");
-var btn3 = document.getElementById("myBtn3");
-
-
-
-
-// Opens the modals
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-btn2.onclick = function() {
-    modal2.style.display = "block";
-}
-btn3.onclick = function() {
-    modal3.style.display = "block";
-}
-
-
-
-
-//  close the modal when user clicks outside window
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";        
-    }
-    if(event.target == modal2){
-    	modal2.style.display= "none";
-    }
-    if(event.target == modal3){
-    	modal3.style.display= "none";
-    }
-}
-</script>
 
 </body>
 
