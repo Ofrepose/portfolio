@@ -65,16 +65,10 @@ APPLICATION_NAME = 'One Last Thing'
 engine = create_engine('sqlite:///1lastthingdatabase.db')
 Base.metadata.bind = engine
 
-# DBSession = sessionmaker(bind = engine)
-# session = DBSession()
+
 
 session = scoped_session(sessionmaker(bind=engine))
 
-# app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-# app.config['MAIL_PORT'] = 465
-# app.config['MAIL_USE_SSL'] = True
-# app.config['MAIN_USERNAME'] = 'paynedanielfranklin@gmail.com'
-# app.config['MAIL_PASSWORD'] = 'Bright661ev137453'
 
 app.config.update(  # EMAIL SETTINGS
     DEBUG=True,
@@ -82,26 +76,18 @@ app.config.update(  # EMAIL SETTINGS
     MAIL_PORT=465,
     MAIL_USE_SSL=True,
     MAIL_USERNAME='paynedanielfranklin@gmail.com',
-    MAIL_PASSWORD='Bright661ev173453',
+    MAIL_PASSWORD='****',
     )
 
 mail = Mail(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
 
-# login_manager.login_view = "http://ourEternalSpace.com"
+
 
 login_manager.login_view = 'showLogin'
 
 
-# Create anti-forgery state token
-# @app.route('/login')
-# def showLogin():
-#     state = ''.join(random.choice(string.ascii_uppercase + string.digits)
-#                     for x in xrange(32))
-#     login_session['state'] = state
-#     # return "The current session state is %s" % login_session['state']
-#     return render_template('login.html', STATE=state)
 
 # see if user exists, if it doesnt make a new account
 
@@ -130,16 +116,7 @@ def checkOutGoing():
     print 'checking for outgoing'
     for i in iterate:
 
-        # print('owner_id ' + str(i.owner_id))
-        # print('target date is ' + i.date_target.strftime("%Y-%m-%d"))
-        # print('todays date is ' + datetime.now().date().strftime("%Y-%m-%d"))
-        # print('title is ' + i.title)
-        # print ('body is ' + i.body)
-        # print('target_email is ' + i.email_target)
-
         if today == i.date_target.date() and i.user.unlocked == 'yes':
-
-            # print('target is unlocked? ' + i.user.unlocked)
 
             if i.sent == 'no':
                 print 'EMAIL will BE SENT'
@@ -155,8 +132,6 @@ def checkOutGoing():
                     + '<br>There is a new post dated message available for you now from <strong>' \
                     + i.user.name_first + ' ' + i.user.name_last \
                     + "</strong>. To view this message log into <a href='OurEternalSpace.com'>Our Eternal Space</a></p>"
-
-                # msg.body = msg1 + ' You have been chosen by your loved one ' + userinfo.name + ' ' + userinfo.name + ' to be their executive on Our Eternal Space.' + userinfo.name + ' Needs your help in activating their website once they pass away.'
 
                 mail.send(msg)
                 i.sent = 'yes'
@@ -179,9 +154,6 @@ def showLogin():
                 return redirect(url_for('User_Main'))
         return render_template('indexBL.html')
     return render_template('index.html')
-
-
-    # return render_template('direct.html')
 
 # creating new users
 
@@ -340,14 +312,10 @@ def User_Main():
         page_private = \
             session.query(Page_Private).filter_by(user_id=current_user.id).all()
 
-        # public_posts = session.query(Public_Post).filter_by(user_id = userinfo.id).order_by('id desc').all()
-
         executive1 = \
             session.query(Executive).filter_by(user_id=current_user.id).one()
         executive2 = \
             session.query(Executive2).filter_by(user_id=current_user.id).one()
-
-        # return render_template('user_main.html', user_id = userinfo.id,  page_private = page_private, posts = public_posts, profile_picture = userinfo.profile_picture,folder = str(userinfo.id))
 
         return render_template(
             'profile.html',
@@ -406,8 +374,6 @@ def editExecutive1():
             + userinfo.name_first + ' ' + userinfo.name_last \
             + " </strong>to be their Executive on <a href='OurEternalSpace.com'>ourEternalSpace.com</a></p> Our Eternal Space is a web app that allows users to easily create private pages for loved ones. These pages will remain locked until the creator has passed away, and will only ever be visible to the person it was created for. <br>As the Executive it is your job to unlock their page <strong>only</strong> when the time is appropriate.<br><br><br><strong>It is very important that you do not unlock these pages until after the creator has passed away.</strong><br>For more information please visit ourEternalSpace.com."
 
-        # msg.body = msg1 + ' You have been chosen by your loved one ' + userinfo.name_first + ' ' + userinfo.name_last + ' to be their executive on Our Eternal Space.' + userinfo.name_first + ' Needs your help in activating their website once they pass away.'
-
         mail.send(msg)
 
         msg1 = '<strong>' + executive2.name_first + ' ' \
@@ -421,8 +387,6 @@ def editExecutive1():
             + userinfo.name_first + ' ' + userinfo.name_last \
             + " </strong>to be their Executive on <a href='OurEternalSpace.com'>ourEternalSpace.com</a></p> Our Eternal Space is a web app that allows users to easily create private pages for loved ones. These pages will remain locked until the creator has passed away, and will only ever be visible to the person it was created for. <br>As the Executive it is your job to unlock their page <strong>only</strong> when the time is appropriate.<br><br><br><strong>It is very important that you do not unlock these pages until after the creator has passed away.</strong><br>For more information please visit ourEternalSpace.com."
 
-        # msg.body = msg1 + ' You have been chosen by your loved one ' + userinfo.name_first + ' ' + userinfo.name_last + ' to be their executive on Our Eternal Space.' + userinfo.name_first + ' Needs your help in activating their website once they pass away.'
-
         mail.send(msg)
         return redirect(url_for('User_Main'))
 
@@ -431,8 +395,6 @@ def editExecutive1():
 def direction():
     if 'username' not in login_session:
         print 'username is not in login session in  check'
-
-    # if 'username' not in login_session or creator.id != login_session['user_id']:
 
         return render_template('index.html')
     else:
@@ -443,8 +405,6 @@ def direction():
         page_private = \
             session.query(Page_Private).filter_by(user_id=userinfo.id).all()
 
-        # public_posts = session.query(Public_Post).filter_by(user_id = userinfo.id).order_by('id desc').all()
-
         creator = getUserInfo(userinfo.id)
         executives = \
             session.query(Executive).filter_by(user_id=userinfo.id).one()
@@ -453,12 +413,7 @@ def direction():
                             user_id=userinfo.id))
         else:
 
-            # return redirect(url_for('New_User_Page1',user_id = userinfo.id))
-
             return redirect(url_for('User_Main', user_id=userinfo.id))
-
-
-            # return render_template('user_main.html', user_id = userinfo.id,  page_private = page_private, posts = public_posts, profile_picture = userinfo.profile_picture)
 
 @app.route('/setup/one/direct/')
 @login_required
@@ -475,8 +430,6 @@ def New_User_Page1(user_id):
     userinfo = session.query(User).filter_by(id=user_id).one()
     page_private = \
         session.query(Page_Private).filter_by(user_id=userinfo.id).all()
-
-    # public_posts = session.query(Public_Post).filter_by(user_id = userinfo.id).order_by('id desc').all()
 
     creator = getUserInfo(userinfo.id)
 
@@ -524,8 +477,6 @@ def add_Executive1():
             + userinfo.name_first + ' ' + userinfo.name_last \
             + " </strong>to be their Executive on <a href='OurEternalSpace.com'>ourEternalSpace.com</a></p> Our Eternal Space is a web app that allows users to easily create private pages for loved ones. These pages will remain locked until the creator has passed away, and will only ever be visible to the person it was created for. <br>As the Executive it is your job to unlock their page <strong>only</strong> when the time is appropriate.<br><br><br><strong>It is very important that you do not unlock these pages until after the creator has passed away.</strong><br>For more information please visit ourEternalSpace.com."
 
-        # msg.body = msg1 + ' You have been chosen by your loved one ' + userinfo.name_first + ' ' + userinfo.name_last + ' to be their executive on Our Eternal Space.' + userinfo.name_first + ' Needs your help in activating their website once they pass away.'
-
         mail.send(msg)
 
         msg1 = '<strong>' + newExecutive2.name_first + ' ' \
@@ -539,8 +490,6 @@ def add_Executive1():
             + userinfo.name_first + ' ' + userinfo.name_last \
             + " </strong>to be their Executive on <a href='OurEternalSpace.com'>ourEternalSpace.com</a></p> Our Eternal Space is a web app that allows users to easily create private pages for loved ones. These pages will remain locked until the creator has passed away, and will only ever be visible to the person it was created for. <br>As the Executive it is your job to unlock their page <strong>only</strong> when the time is appropriate.<br><br><br><strong>It is very important that you do not unlock these pages until after the creator has passed away.</strong><br>For more information please visit ourEternalSpace.com."
 
-        # msg.body = msg1 + ' You have been chosen by your loved one ' + userinfo.name_first + ' ' + userinfo.name_last + ' to be their executive on Our Eternal Space.' + userinfo.name_first + ' Needs your help in activating their website once they pass away.'
-
         mail.send(msg)
 
         return redirect(url_for('User_Main'))
@@ -552,8 +501,6 @@ def New_User_Page2(user_id):
     userinfo = session.query(User).filter_by(id=user_id).one()
     page_private = \
         session.query(Page_Private).filter_by(user_id=userinfo.id).all()
-
-    # public_posts = session.query(Public_Post).filter_by(user_id = userinfo.id).order_by('id desc').all()
 
     creator = getUserInfo(userinfo.id)
 
@@ -601,8 +548,6 @@ def add_Executive2(user_id):
                 + userinfo.name \
                 + " to be their Executive on<a href ='OurEternalSpace.com'> Our Eternal Space.</a><br> Our Eternal Space is an after life web page where you can create websites for those you love to be viewed only after you pass away.<br>These web pages will always be locked to the public and only viewable to the people they are created for. <br>Your responsibility, as an Executive, is to unlock the page once the creator has passed away. You can do so by visiting our website, logging in with this email address and click on open pages.<br> Please be sure not to unlock the page until the time is appropriate. When you do, an email will be sent out to everyone that has a page made for them! </p>"
 
-            # msg.body = msg1 + ' You have been chosen by your loved one ' + userinfo.name + ' ' + userinfo.name + ' to be their executive on Our Eternal Space.' + userinfo.name + ' Needs your help in activating their website once they pass away.'
-
             mail.send(msg)
             return redirect(url_for('User_Main', user_id=userinfo.id))
 
@@ -613,8 +558,6 @@ def New_User_Page3(user_id):
     userinfo = session.query(User).filter_by(id=user_id).one()
     page_private = \
         session.query(Page_Private).filter_by(user_id=userinfo.id).all()
-
-    # public_posts = session.query(Public_Post).filter_by(user_id = userinfo.id).order_by('id desc').all()
 
     creator = getUserInfo(userinfo.id)
 
@@ -638,9 +581,6 @@ def New_User_Page3(user_id):
 @login_required
 def Add_Public_Post(user_id):
     userinfo = session.query(User).filter_by(id=user_id).one()
-
-    # executive1 = session.query(Executive).filter_by(user_id = userinfo.id).one()
-    # executive2 = session.query(Executive2).filter_by(user_id = userinfo.id).one()
 
     page_private = \
         session.query(Page_Private).filter_by(user_id=userinfo.id).all()
@@ -669,9 +609,6 @@ def Add_Private_Page(user_id):
         privatePageId = \
             session.query(Page_Private).filter_by(user_id=user_id).one()
         return redirect(url_for('User_Main', user_id=userinfo.id))
-
-
-        # return redirect(url_for('Private_Page', user_id = userinfo.id, page_id = privatePageId.id))
 
     # -------------------create private page--------------------
 
@@ -908,8 +845,6 @@ def upload_photo(user_id, page_id):
     all_photos = \
         session.query(Photos).filter_by(user_owner=current_user.id).all()
 
-    # public_posts = session.query(Public_Post).filter_by(user_id = userinfo.id).order_by('id desc').all()
-
     if request.method == 'POST':
         print 'inside request method is equal to post inside upload profile picture'
 
@@ -942,9 +877,6 @@ def upload_photo(user_id, page_id):
 
             file.save(os.path.join(app.config['UPLOAD_FOLDER'],
                       filename))
-
-            # thisUser = session.query(User).filter_by(id = user_id).one()
-            # thisUser.profile_picture = filename
 
             newPhoto = Photos(name=filename, user_owner=userinfo.id,
                               page_id=page_id)
@@ -983,8 +915,6 @@ def upload_video(user_id, page_id):
     page_private = \
         session.query(Page_Private).filter_by(user_id=userinfo.id).all()
 
-    # public_posts = session.query(Public_Post).filter_by(user_id = userinfo.id).order_by('id desc').all()
-
     if request.method == 'POST':
         print 'inside request method is equal to post inside upload profile picture'
 
@@ -1015,9 +945,6 @@ def upload_video(user_id, page_id):
                     filename = filename + str('1')
             file.save(os.path.join(app.config['UPLOAD_FOLDER'],
                       filename))
-
-            # thisUser = session.query(User).filter_by(id = user_id).one()
-            # thisUser.profile_picture = filename
 
             newVideo = Videos(name=filename, user_owner=userinfo.id,
                               page_id=page_id)
@@ -1065,8 +992,6 @@ def createPDMsg(page_id):
     if request.method == 'POST':
         datetime_object = datetime.strptime(request.form['date'],
                 '%Y-%m-%d')
-
-        # print (' date is ' + datetime_object)
 
         newMsg = PDMessages(
             owner_id=userinfo.id,
@@ -1130,9 +1055,6 @@ def OpenPage(user_id):
         allUsers = session.query(User).all()
         allExecutives1 = session.query(Executive).all()
         allExecutives2 = session.query(Executive2).all()
-
-        # for u in usersWhoMadePagesForThisUser:
-        #     if usersWhoMadePagesForThisUser.unlocked == 'yes':
 
         return render_template(
             'openPages.html',
@@ -1291,16 +1213,8 @@ def upload_profile_picture(user_id):
             return redirect(url_for('User_Main'))
     else:
 
-            # return redirect(url_for('uploaded_file',
-                                    # filename=filename, user_id = userinfo.id))
-
         return redirect(url_for('User_Main'))
 
-
-# @app.route('/show/<filename>')
-# def uploaded_file(filename):
-#     filename = 'localhost:5000/static/im/' + filename
-    # return render_template('user_main.html', user_id = user_id,  page_private = page_private, posts = public_posts, filename = filename, profile_picture = filename)
 
 @app.route('/static/im/<filename>/')
 def send_file(filename):
@@ -1313,8 +1227,6 @@ def uploaded_file(filename, user_id):
     page_private = \
         session.query(Page_Private).filter_by(user_id=userinfo.id).all()
 
-    # public_posts = session.query(Public_Post).filter_by(user_id = userinfo.id).order_by('id desc').all()
-
     return render_template('user_main.html', filename=filename,
                            user_id=user_id, page_private=page_private)
 
@@ -1325,8 +1237,6 @@ def uploaded_file(filename, user_id):
 def publicPage(user_id):
     userinfo = session.query(User).filter_by(id=user_id).one()
 
-    # public_posts = session.query(Public_Post).filter_by(user_id = userinfo.id).order_by('id desc').all()
-
     creator = getUserInfo(userinfo.id)
     if 'username' not in login_session or creator.id \
         != login_session['user_id']:
@@ -1336,9 +1246,6 @@ def publicPage(user_id):
         return render_template('user_main.html', user_id=userinfo.id,
                                page_private=page_private,
                                profile_picture=userinfo.profile_picture)
-
-
-        # return render_template('public.html', user_id = userinfo.id, posts = public_posts, profile_picture = userinfo.profile_picture)
 
 @app.route('/back/admin/', methods=['GET', 'POST'])
 def houdini():
@@ -1375,15 +1282,10 @@ def harryHoudini(user_id):
     users = session.query(User).all()
     return render_template('harryHoudini.html', users=users)
 
-# @app.route('/Mallory')
-# def lol():
-#     return render_template('Mallory.html')
-
 if __name__ == '__main__':
     app.debug = False
     app.run('0.0.0.0')
 
-    # connect_args=={'check_same_thread': False}
 
 
 			
